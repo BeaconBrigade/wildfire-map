@@ -31,3 +31,11 @@ input {
     border: 2px solid hsl(0, 20%, 20%);
     margin-bottom: 10px;
 }
+
+textarea {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+span {
+    text-decoration: underline;
+}

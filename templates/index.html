@@ -12,10 +12,10 @@
     <div class="point">
         <h3>{{point.title}}</h3>
         <p>{{point.description}}</p>
-        <p>
-            Latitude: {{point.latitude}}
-            Longitude: {{point.longitude}}
-        </p>
+        <ul>
+            <li>Latitude: <span>{{point.latitude}}</span></li>
+            <li>Longitude: <span>{{point.longitude}}</span></li>
+        </ul>
     </div>
     {% endfor %}
     <form action="/" method="POST">
