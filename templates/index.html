@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="https://js.arcgis.com/4.26/esri/themes/light/main.css">
+<script src="https://js.arcgis.com/4.26/"></script>
+{% endblock %}
+
+{% block body %}
+<h1 style="margin-left: auto; margin-right: auto">Wild Fire Map</h1>
+<main>
+    {% for point in coords.values() %}
+    <div class="point">
+        <h3>{{point.title}}</h3>
+        <p>{{point.description}}</p>
+        <p>
+            Latitude: {{point.latitude}}
+            Longitude: {{point.longitude}}
+        </p>
+    </div>
+    {% endfor %}
+    <form action="/" method="POST">
+        <h2>Report Sighting</h2>
+        <label for="latitude">Latitude:</label>
+        <input id="latitude" name="latitude" type="text" /><br />
+
+        <label for="longitude">Longitude:</label>
+        <input id="longitude" name="longitude" type="text" /><br />
+
+        <label for="title">Name of marker</label>
+        <input id="title" name="title" type="text" /><br />
+
+        <label for="description">Description</label>
+        <textarea id="description" name="description" type="text"></textarea><br />
+
+        <input id="submit" value="Submit" type="submit">
+    </form>
+</main>
+{% endblock %}
+
+<script>
+
+</script>
