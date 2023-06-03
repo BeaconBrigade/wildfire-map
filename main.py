@@ -16,7 +16,6 @@ def index_page():
 def receive_notification():
     data = request.form
 
-    print(data)
     longitude = data["longitude"]
     latitude = data["latitude"]
     title = data["title"]
@@ -25,8 +24,6 @@ def receive_notification():
 
     uuid = uuid4()
     database[uuid] = point
-
-    print(database)
 
     return render_template("index.html", coords=database)
 
