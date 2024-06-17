@@ -8,7 +8,12 @@
 {% block body %}
 <h1 style="margin-left: auto; margin-right: auto">Wild Fire Map</h1>
 <main>
-    {% for point in coords.values() %}
+    {% for msg in get_flashed_messages() %}
+      <div class="error">
+        <h3>Error: {{ msg }}</h3>
+      </div>
+    {% endfor %}
+    {% for point in coords %}
     <div class="point">
         <h3>{{point.title}}</h3>
         <p>{{point.description}}</p>
@@ -21,16 +26,16 @@
     <form action="/" method="POST">
         <h2>Report Sighting</h2>
         <label for="latitude">Latitude:</label>
-        <input id="latitude" name="latitude" type="text" /><br />
+        <input id="latitude" name="latitude" required step="0.000000000000000001" type="number" /><br />
 
         <label for="longitude">Longitude:</label>
-        <input id="longitude" name="longitude" type="text" /><br />
+        <input id="longitude" name="longitude" required step="0.000000000000000001" type="number" /><br />
 
         <label for="title">Name of marker</label>
-        <input id="title" name="title" type="text" /><br />
+        <input id="title" name="title" required type="text" /><br />
 
         <label for="description">Description</label>
-        <textarea id="description" name="description" type="text"></textarea><br />
+        <textarea id="description" name="description" required type="text"></textarea><br />
 
         <input id="submit" value="Submit" type="submit">
     </form>

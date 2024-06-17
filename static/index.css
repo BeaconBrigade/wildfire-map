@@ -40,3 +40,11 @@ textarea {
 span {
     text-decoration: underline;
 }
+
+.error {
+  border: 2px solid hsl(0, 90%, 40%);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  min-width: 240px;
+}
