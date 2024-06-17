@@ -30,6 +30,7 @@ input {
     border-radius: 20px;
     border: 2px solid hsl(0, 20%, 20%);
     margin-bottom: 10px;
+    min-width: 250px;
 }
 
 textarea {
